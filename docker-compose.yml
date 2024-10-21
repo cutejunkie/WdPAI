@@ -18,3 +18,26 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app/
+
+  db:
+    build:
+      context: .
+      dockerfile: docker/db/Dockerfile
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+  
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pg-admin2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@wdpai.pl
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - pg-network
+  
+networks:
+  pg-network:
