@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie - PrezentOwO</title>
+    <style>
+        /* Resetowanie domyślnych stylów */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f2f2f2;
+            height: 100vh; /* Ustawienie wysokości na 100vh */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Zapobiega przewijaniu strony */
+        }
+
+        /* Tło */
+        .background {
+            position: relative;
+            width: 100vw; /* Rozciąga tło na całą szerokość widoku */
+            height: 100vh; /* Tło rozciąga się na całą wysokość ekranu */
+            background-color: #f7d8e3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0; /* Przesunięcie tła do samej góry */
+        }
+
+        /* Logo - wycentrowane w poziomie i pionie */
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Wyśrodkowanie w pionie */
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+        }
+
+        /* Formularz */
+        .form-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 625px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .input-field {
+            position: relative;
+            width: 100%;
+            height: 59px;
+        }
+
+        .input-field input {
+            width: 100%;
+            height: 100%;
+            background-color: #f7d8e3;
+            color: #a87084;
+            font-size: 20px;
+            padding-left: 19px;
+            border: none;
+            border-radius: 7px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        .input-field input::placeholder {
+            color: white;
+        }
+
+        .input-field label {
+            position: absolute;
+            top: 18px;
+            left: 19px;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .button {
+            width: 437px;
+            height: 59px;
+            background-color: #ebd4aa;
+            border-radius: 7px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button-text {
+            color: #5a2e39;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .button:active {
+            background-color: #c6ab7a; /* Ciemniejszy kolor przycisku po kliknięciu */
+        }
+
+        /* Tytuł "ZALOGUJ SIĘ" poniżej prostokąta */
+        .title {
+            font-size: 56px;
+            color: #5a2e39;
+            font-weight: 400;
+            margin-top: 30px;
+        }
+
+        .register-text {
+            margin-top: 20px;
+            font-size: 20px;
+            color: black;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        /* Przycisk rejestracji */
+        .register-button {
+            width: 437px;
+            height: 59px;
+            background-color: #ebd4aa;
+            border-radius: 7px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 1px; /* Zmniejszony margines między napisem a przyciskiem */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Kontener logowania -->
+    <div class="background">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../images/zabka.png" alt="Logo PrezentOwO">
+        </div>
+    </div>
+
+    <!-- Tytuł "ZALOGUJ SIĘ" poniżej różowego prostokąta -->
+    <div class="title">ZALOGUJ SIĘ</div>
+
+    <!-- Formularz logowania -->
+    <div class="form-container">
+        <!-- Adres e-mail -->
+        <div class="input-field">
+            <input type="email" id="email" placeholder="adres e-mail">
+        </div>
+
+        <!-- Hasło -->
+        <div class="input-field">
+            <input type="password" id="password" placeholder="hasło">
+        </div>
+
+        <!-- Przycisk "Zaloguj się" -->
+        <div class="button">
+            <div class="button-text">ZALOGUJ SIĘ</div>
+        </div>
+
+        <!-- Link do rejestracji -->
+        <div class="register-text">nie masz konta? zarejestruj się</div>
+
+        <!-- Przycisk "Zarejestruj się" -->
+        <div class="register-button">
+            <div class="button-text">ZAREJESTRUJ SIĘ</div>
+        </div>
+    </div>
+</body>
+</html>

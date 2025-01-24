@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj Osobę - PrezentOwO</title>
+    <style>
+        /* Resetowanie domyślnych stylów */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #fbeaf1;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Styl panelu bocznego */
+        .sidebar {
+            background-color: #f7d8e3;
+            width: 20%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            width: 98%; /* Responsywny rozmiar */
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            color: #b75d73;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #b75d73;
+        }
+
+        .logout {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .logout a {
+            font-size: 1.2rem;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .logout a:hover {
+            color: #b75d73;
+        }
+
+        /* Styl głównej zawartości */
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-content header {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #5a2e39;
+        }
+
+        .form-container {
+            background-color: #f7d8e3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #b75d73;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-size: 1rem;
+            color: #5a2e39;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #f5c5d4;
+            border-radius: 5px;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #b75d73;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #b75d73;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #7b3b48;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Panel boczny -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="Logo PrezentOwO">
+                <h1>PrezentOwO</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">🏠 Strona główna</a></li>
+                    <li><a href="#">🔍 Wyszukiwanie</a></li>
+                    <li><a href="#">🙍‍♂️ Twój profil</a></li>
+                    <li><a href="#">➕ Dodaj osobę</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">⬅️ Wyloguj się</a>
+            </div>
+        </aside>
+
+        <!-- Główna zawartość -->
+        <main class="main-content">
+            <header>
+                <h2>DODAJ OSOBĘ</h2>
+            </header>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">IMIĘ</label>
+                        <input type="text" id="name" name="name" placeholder="Wpisz imię">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Data urodzenia</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label for="ideas">Pomysły</label>
+                        <textarea id="ideas" name="ideas" placeholder="Pomysły..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">DODAJ</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
