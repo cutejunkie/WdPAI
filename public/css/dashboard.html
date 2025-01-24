@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrezentOwO</title>
+    <style>
+        /* Resetowanie domyślnych stylów */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        /* Główny kontener */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Panel boczny */
+        .sidebar {
+            background-color: #f7d8e3;
+            width: 20%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Przestrzeń między zakładkami a „wyloguj się” */
+            align-items: center;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo img {
+            width: 98%; /* Responsywny rozmiar */
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            color: #b75d73;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #b75d73;
+        }
+
+        .logout {
+            margin-top: auto; /* Wypycha opcję wylogowania na dół kontenera */
+            text-align: center;
+        }
+
+        .logout a {
+            font-size: 1.2rem;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .logout a:hover {
+            color: #b75d73;
+        }
+
+        /* Główna zawartość */
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .main-content header {
+            margin-bottom: 20px;
+            color: #5a2e39;
+        }
+
+        /* Stylizacja notatek */
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsywne prostokąty */
+            gap: 20px; /* Odstępy między notatkami */
+        }
+
+        .note {
+            height: 150px; /* Stała wysokość dla równości */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #fbeaf1;
+            border: 1px solid #f5c5d4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .note h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #b75d73;
+        }
+
+        .note h3:hover {
+            color: #7b3b48; /* Ciemniejszy kolor dla napisu "PERSON" */
+            cursor: pointer; /* Dodaje wskaźnik myszki w formie ręki */
+        }
+
+        .note p {
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Panel boczny -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../../images/logo.png" alt="Logo PrezentOwO">
+                <h1>PrezentOwO</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">🏠 Strona główna</a></li>
+                    <li><a href="#">🔍 Wyszukiwanie</a></li>
+                    <li><a href="#">🙍‍♂️ Twój profil</a></li>
+                    <li><a href="#">➕ Dodaj osobę</a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="#">⬅️ Wyloguj się</a>
+            </div>
+        </aside>
+
+        <!-- Główna zawartość -->
+        <main class="main-content">
+            <header>
+                <h2>Strona Główna</h2>
+            </header>
+            <section class="notes">
+                <div class="note">
+                    <h3>PERSON</h3>
+                    <p>NAME</p>
+                    <p>notesnotesnotesnotesnotes notesnotes</p>
+                </div>
+                <div class="note">
+                    <h3>PERSON</h3>
+                    <p>NAME</p>
+                    <p>notesnotesnotesnotesnotes</p>
+                </div>
+                <div class="note">
+                    <h3>PERSON</h3>
+                    <p>NAME</p>
+                    <p>notesnotesnotesnotesnotes</p>
+                </div>
+                <div class="note">
+                    <h3>PERSON</h3>
+                    <p>NAME</p>
+                    <p>notesnotesnotesnotesnotes notesnotes</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
