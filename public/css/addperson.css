@@ -18,14 +18,18 @@ body {
     width: 100%;
 }
 
-/* Styl panelu bocznego */
+/* Panel boczny */
 .sidebar {
+    position: fixed; /* Ustawienie stałej pozycji */
+    top: 0; /* Przyklej na samej górze */
+    left: 0; /* Przyklej po lewej stronie */
+    height: 100%; /* Spraw, by pasek boczny zajmował całą wysokość ekranu */
     background-color: #f7d8e3;
     width: 20%;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Przestrzeń między zakładkami a „wyloguj się” */
     align-items: center;
 }
 
@@ -86,6 +90,7 @@ body {
 
 /* Styl głównej zawartości */
 .main-content {
+    margin-left: 20%; /* Dostosuj do szerokości paska bocznego */
     flex: 1;
     background-color: #fff;
     padding: 20px;

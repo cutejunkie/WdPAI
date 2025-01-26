@@ -8,7 +8,6 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f2f2f2;
     height: 100vh; /* Ustawienie wysokości na 100vh */
     display: flex;
     flex-direction: column;

@@ -33,27 +33,59 @@
             </header>
             <section class="notes">
                 <div class="note">
+                    <button class="delete-button">X</button>
                     <h3>PERSON</h3>
                     <p>NAME</p>
                     <p>notesnotesnotesnotesnotes notesnotes</p>
                 </div>
                 <div class="note">
+                    <button class="delete-button">X</button>
                     <h3>PERSON</h3>
                     <p>NAME</p>
                     <p>notesnotesnotesnotesnotes</p>
                 </div>
                 <div class="note">
+                    <button class="delete-button">X</button>
                     <h3>PERSON</h3>
                     <p>NAME</p>
                     <p>notesnotesnotesnotesnotes</p>
                 </div>
                 <div class="note">
+                    <button class="delete-button">X</button>
                     <h3>PERSON</h3>
                     <p>NAME</p>
                     <p>notesnotesnotesnotesnotes notesnotes</p>
                 </div>
             </section>
+
+            <section class="notes">
+                <div class="note">
+                    <button class="delete-button">X</button>
+                    <h3>PERSON</h3>
+                    <p>NAME</p>
+                    <p>notesnotesnotesnotesnotes notesnotes</p>
+                </div>
+                <div class="note">
+                    <button class="delete-button">X</button>
+                    <h3>PERSON</h3>
+                    <p>NAME</p>
+                    <p>notesnotesnotesnotesnotes</p>
+                </div>
+            </section>            
         </main>
     </div>
+
+
+    <!-- JAVASCRIPT DO USUWANIA NOTATEK -->
+    <script>
+        // Nasłuchiwanie na kliknięcia w przyciski "X"
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('delete-button')) {
+                const note = event.target.closest('.note'); // Znajdź rodzica (notatkę)
+                note.remove(); // Usuń notatkę
+            }
+        });
+    </script>    
+
 </body>
 </html>
