@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php
+echo '<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -39,9 +40,10 @@
         <div class="register-text">nie masz konta? zarejestruj się</div>
 
         <!-- Przycisk "Zarejestruj się" -->
-        <div class="register-button">
+        <a href="/register" class="register-button">
             <div class="button-text">ZAREJESTRUJ SIĘ</div>
-        </div>
+        </a>
+
     </form>
 </body>
-</html>
+</html>';

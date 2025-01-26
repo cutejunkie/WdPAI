@@ -126,6 +126,8 @@ body {
 
 /* Przycisk rejestracji */
 .register-button {
+    text-decoration: none; /* Usuwa podkreślenie tekstu */
+    color: inherit; /* Zachowuje kolor tekstu zdefiniowany w button-text */
     width: 437px;
     height: 59px;
     background-color: #ebd4aa;
@@ -137,4 +139,8 @@ body {
     cursor: pointer;
     margin-top: 1px; /* Zmniejszony margines między napisem a przyciskiem */
     margin-bottom: 20px;
+}
+
+.register-button:active {
+    background-color: #c6ab7a; /* Ciemniejszy kolor przycisku po kliknięciu */
 }
