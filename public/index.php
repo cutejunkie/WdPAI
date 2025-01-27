@@ -1,7 +1,12 @@
 <?php
 require_once __DIR__ . '/../src/Router.php';
+require_once __DIR__ . '/../src/repositories/user_repository.php';
 
 $publicDir = __DIR__;
+
+// baza danych test
+$new_repo = new UserRepository();
+
 
 // Sprawdzenie, czy żądanie dotyczy pliku statycznego
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

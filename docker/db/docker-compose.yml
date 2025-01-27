@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    
+    environment:
+      - POSTGRES_PASSWORD=haslo
+      - POSTGRES_USER=gaba
+      - POSTGRES_DB=bazadanych
+
+    volumes:
+      - ./data/db:/var/lib/postgresql/data/
