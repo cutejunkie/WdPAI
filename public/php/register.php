@@ -1,5 +1,4 @@
-<?php
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -51,4 +50,4 @@ echo '<!DOCTYPE html>
 
     </form>
 </body>
-</html>';
+</html>

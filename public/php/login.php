@@ -1,5 +1,4 @@
-<?php
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +19,7 @@ echo '<!DOCTYPE html>
     <div class="title">ZALOGUJ SIĘ</div>
 
     <!-- Formularz logowania -->
-    <form class="form-container">
+    <form method="POST" class="form-container">
         <!-- Adres e-mail -->
         <div class="input-field">
             <input type="email" id="email" placeholder="adres e-mail">
@@ -46,4 +45,4 @@ echo '<!DOCTYPE html>
 
     </form>
 </body>
-</html>';
+</html>

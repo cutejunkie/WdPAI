@@ -1,11 +1,11 @@
 <?php
 
-class UserRepository {
+class NotesRepository {
     private $db_connection;
 
     function __construct() {
         $this->db_connection = pg_connect("host=localhost dbname=bazadanych user=gaba password=haslo port=5432");
-        $stmt = 'CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, user_role VARCHAR(5) NOT NULL, user_name VARCHAR (16) NOT NULL, email VARCHAR(100) NOT NULL, passw VARCHAR(255) NOT NULL, creation_date DATE NOT NULL DEFAULT CURRENT_DATE);';
+        $stmt = 'CREATE TABLE IF NOT EXISTS notes (id SERIAL PRIMARY KEY, id_user INTEGER REFERENCES users(id), gifted_name VARCHAR (16) NOT NULL, date_of_birth DATE NOT NULL, ideas VARCHAR(255) NOT NULL);';
         pg_query($this->db_connection, $stmt);
     }
 
@@ -14,4 +14,4 @@ class UserRepository {
     }
 }
 
-/* najpier to potem notes*/
+/* najpier notes potem to*/
