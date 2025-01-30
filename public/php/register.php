@@ -19,28 +19,24 @@
     <div class="title">ZAREJESTRUJ SIĘ</div>
 
     <!-- Formularz rejestracji -->
-    <form class="form-container">
-        <!-- Imię -->
+    <form method="POST" class="form-container">
         <div class="input-field">
             <input type="text" id="first-name" placeholder="imię">
         </div>
 
-        <!-- Adres e-mail -->
         <div class="input-field">
             <input type="email" id="email" placeholder="adres e-mail">
         </div>
 
-        <!-- Hasło -->
         <div class="input-field">
             <input type="password" id="password" placeholder="hasło">
         </div>
 
         <!-- Przycisk "Zarejestruj się" -->
-        <div class="button">
-            <div class="button-text">ZAREJESTRUJ SIĘ</div>
-        </div>
+        <button class="button" type="submit">
+            <span class="button-text">ZAREJESTRUJ SIĘ</span>
+        </button>
 
-        <!-- Link do logowania -->
         <div class="register-text">masz już konto? zaloguj się</div>
 
         <!-- Przycisk "Zaloguj się" -->

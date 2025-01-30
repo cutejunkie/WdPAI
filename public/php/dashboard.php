@@ -22,7 +22,7 @@
                 </ul>
             </nav>
             <div class="logout">
-                <a href="/login">⬅️ Wyloguj się</a>
+                <a href="/api/logout">⬅️ Wyloguj się</a>
             </div>
         </aside>
 

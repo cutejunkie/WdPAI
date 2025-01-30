@@ -2,14 +2,12 @@
 require_once __DIR__ . '/../src/Router.php';
 require_once __DIR__ . '/../src/repositories/user_repository.php';
 require_once __DIR__ . '/../src/controllers/DefaultController.php';
-
+require_once __DIR__ . '/../src/controllers/AuthController.php';
 
 $publicDir = __DIR__;
 
 session_start();
 
-// baza danych test
-$new_repo = new UserRepository();
 
 // Sprawdzenie, czy żądanie dotyczy pliku statycznego
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -27,6 +25,7 @@ if (file_exists($filePath) && is_file($filePath)) {
 
 $router = new Router();
 $default_controller = new DefaultController();
+$auth_controller = new AuthController();
 
 // Definiowanie tras
 $router->add('/', function() use($default_controller) {
@@ -47,6 +46,18 @@ $router->add('/login', function() use($default_controller) {
 
 $router->add('/register', function() use($default_controller) {
     $default_controller->register();
+});
+
+$router->add('/api/login', function() use($auth_controller) {
+    $auth_controller->login();
+});
+
+$router->add('/api/register', function() use($auth_controller) {
+    $auth_controller->register();
+});
+
+$router->add('/api/logout', function() use($auth_controller) {
+    $auth_controller->logout();
 });
 
 $router->add('/yourprofile', function() use($default_controller) {

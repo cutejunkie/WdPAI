@@ -66,6 +66,6 @@ class User
 
     public function set_role($role): void
     {
-        $this->role = $user_role;
+        $this->user_role = $role;
     }
 }

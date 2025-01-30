@@ -17,7 +17,7 @@ class Note
         $this->ideas = $ideas;
     }
 
-    public function get_gifted_name(): int
+    public function get_gifted_name(): string
     {
         return $this->gifted_name;
     }
