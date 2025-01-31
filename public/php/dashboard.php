@@ -31,47 +31,41 @@
             <header>
                 <h2>Strona Główna</h2>
             </header>
-            <section class="notes">
-                <div class="note">
-                    <button class="delete-button">X</button>
-                    <h3>PERSON</h3>
-                    <p>NAME</p>
-                    <p>notesnotesnotesnotesnotes notesnotes</p>
-                </div>
-                <div class="note">
-                    <button class="delete-button">X</button>
-                    <h3>PERSON</h3>
-                    <p>NAME</p>
-                    <p>notesnotesnotesnotesnotes</p>
-                </div>
-                <div class="note">
-                    <button class="delete-button">X</button>
-                    <h3>PERSON</h3>
-                    <p>NAME</p>
-                    <p>notesnotesnotesnotesnotes</p>
-                </div>
-                <div class="note">
-                    <button class="delete-button">X</button>
-                    <h3>PERSON</h3>
-                    <p>NAME</p>
-                    <p>notesnotesnotesnotesnotes notesnotes</p>
-                </div>
-            </section>
+            <?php
+            if(isset($notes) && !empty($notes)){
+                $notes_length = count($notes);
 
-            <section class="notes">
+                for($i=0; $i<$notes_length; $i++){
+                    if($i%4==0){
+                        echo '<section class="notes">';
+                    }
+
+                    echo '<div class="note">
+                        <button class="delete-button">X</button>
+                        <h3>'. $notes[$i]->get_gifted_name() .'</h3>
+                        <p>'. $notes[$i]->get_date_of_birth() .'</p>
+                        <p>'. $notes[$i]->get_ideas() .'</p>
+                    </div>';
+
+                    if($i%4==3){
+                        echo '</section>';
+                    }
+                }
+
+                if($i%4!=3){
+                    echo '</section>';
+                }
+            }
+            ?>
+            <!-- <section class="notes">
                 <div class="note">
                     <button class="delete-button">X</button>
                     <h3>PERSON</h3>
                     <p>NAME</p>
                     <p>notesnotesnotesnotesnotes notesnotes</p>
                 </div>
-                <div class="note">
-                    <button class="delete-button">X</button>
-                    <h3>PERSON</h3>
-                    <p>NAME</p>
-                    <p>notesnotesnotesnotesnotes</p>
-                </div>
-            </section>            
+            </section> -->
+                    
         </main>
     </div>
 

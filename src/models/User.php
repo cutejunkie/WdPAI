@@ -2,6 +2,7 @@
 
 class User
 {
+    private $user_id;
     private $user_role;
     private $user_name;
     private $email;
@@ -17,6 +18,16 @@ class User
         $this->email = $email;
         $this->passw = $passw;
         $this->user_name = $user_name;
+    }
+
+    public function get_id()
+    {
+        return $this->id;
+    }
+
+    public function set_id(string $id): void
+    {
+    $this->id = $id;
     }
 
     public function get_email(): string

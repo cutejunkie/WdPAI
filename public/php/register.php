@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-    <!-- Kontener logowania -->
+    <!-- Kontener rejestracji -->
     <div class="background">
         <!-- Logo -->
         <div class="logo">
@@ -19,9 +19,9 @@
     <div class="title">ZAREJESTRUJ SIĘ</div>
 
     <!-- Formularz rejestracji -->
-    <form method="POST" class="form-container">
+    <form method="POST" class="form-container" onsubmit="return false;">
         <div class="input-field">
-            <input type="text" id="first-name" placeholder="imię">
+            <input type="text" id="user_name" placeholder="nazwa użytkownika">
         </div>
 
         <div class="input-field">
@@ -33,7 +33,7 @@
         </div>
 
         <!-- Przycisk "Zarejestruj się" -->
-        <button class="button" type="submit">
+        <button class="button" id="register_button">
             <span class="button-text">ZAREJESTRUJ SIĘ</span>
         </button>
 
@@ -43,7 +43,34 @@
         <a href="/login" class="register-button">
             <div class="button-text">ZALOGUJ SIĘ</div>
         </a>
-
     </form>
+
+    <script>
+        document.getElementById("register_button").addEventListener("click", () => {
+            const userName = document.getElementById("user_name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const payload = {
+                "user_name": userName,
+                "email": email,
+                "password": password
+            };
+
+            fetch("/api/register", {
+                method : "POST",
+                mode: "same-origin",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then(res => {
+                if (res.redirected){
+                    window.location.assign(res.url);
+                }        
+            });
+        });
+    </script>
 </body>
 </html>

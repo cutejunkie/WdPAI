@@ -20,14 +20,14 @@ class DefaultController extends AppController {
         $this->render('dashboard');
     }
 
-    public function addperson()
-    {
-        if(empty($_SESSION['user'])) {
-            $this->render('login');
-            exit();
-        }
-        $this->render("addperson");
-    }
+    // public function addperson()
+    // {
+    //     if(empty($_SESSION['user'])) {
+    //         $this->render('login');
+    //         exit();
+    //     }
+    //     $this->render("addperson");
+    // }
 
     public function yourprofile()
     {

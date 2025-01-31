@@ -5,6 +5,7 @@ class Note
     private $gifted_name;
     private $date_of_birth;
     private $ideas;
+    private $id;
 
     public function __construct(
         string $gifted_name,
@@ -15,6 +16,16 @@ class Note
         $this->gifted_name = $gifted_name;
         $this->date_of_birth = $date_of_birth;
         $this->ideas = $ideas;
+    }
+
+    public function get_id()
+    {
+        return $this->id;
+    }
+
+    public function set_id(string $id): void
+    {
+    $this->id = $id;
     }
 
     public function get_gifted_name(): string

@@ -20,21 +20,24 @@ class AuthController extends AppController {
             return $this->render('login');
         }
 
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
+        $json = file_get_contents('php://input');
+        $data = json_decode($json, true);
+
+        $email = $data['email'] ?? '';
+        $password = $data['password'] ?? '';
         
         $user = $this->user_repository->getUser($email);
 
         // if (!$user || !password_verify($password, $user->get_password())) {
         //     return $this->render('login');
         // }
-        var_dump($user);
 
         if (!$user) {
             return $this->render('login');
         }
 
         $_SESSION['user'] = [
+            'user_id' => $user->get_id(),
             'email' => $user->get_email(),
             'user_name' => $user->get_name(),
             'creation_date' => $user->get_creation_date(),
@@ -51,12 +54,16 @@ class AuthController extends AppController {
             return $this->render('register');
         }
 
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['passw'] ?? '';
-        $name = $_POST['name'] ?? '';
+        $json = file_get_contents('php://input');
+        $data = json_decode($json, true);
+
+        $email = $data['email'] ?? '';
+        $password = $data['password'] ?? '';
+        $name = $data['user_name'] ?? '';
 
         if ($this->user_repository->getUser($email)) {
-            return $this->render('login');
+            header("Location: /login");
+            exit();
         }
 
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -64,7 +71,8 @@ class AuthController extends AppController {
         
         $this->user_repository->addUser($user);
 
-        return $this->render('login');
+        header("Location: /login");
+        exit();
     }
 
     public function logout() {

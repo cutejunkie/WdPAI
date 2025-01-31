@@ -25,7 +25,7 @@ class NoteController extends AppController
             $giftedName = $_POST['gifted_name'];
             $dateOfBirth = $_POST['date_of_birth'];
             $ideas = $_POST['ideas'];
-            $userId = $_SESSION['user']['id'];
+            $userId = $_SESSION['user']['user_id'];
 
             $note = new Note($giftedName, $dateOfBirth, $ideas);
             $this->notes_repository->addNote($note, $userId);
@@ -41,8 +41,8 @@ class NoteController extends AppController
             exit();
         }
 
-        $userId = $_SESSION['user']['id'];
+        $userId = $_SESSION['user']['user_id'];
         $notes = $this->notes_repository->getNotesByUser($userId);
-        $this->render('dashboard');
+        $this->render('dashboard', ["notes"=>$notes]);
     }
 }

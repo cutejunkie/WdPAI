@@ -53,8 +53,12 @@
 
             fetch("/api/login", {
                 method : "POST",
-                headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-                body: Object.entries(payload).map(([k,v])=>{return k+'='+v}).join('&')
+                mode: "same-origin",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
             }).then(res => {
                 if (res.redirected){
                     window.location.assign(res.url);

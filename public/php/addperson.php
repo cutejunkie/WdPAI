@@ -34,12 +34,12 @@
             <div class="form-container">
                 <form action="#" method="POST">
                     <div class="form-group">
-                        <label for="name">IMIĘ</label>
-                        <input type="text" id="name" name="name" placeholder="Wpisz imię">
+                        <label for="name">Imię</label>
+                        <input type="text" id="gifted_name" name="gifted_name" placeholder="Wpisz imię">
                     </div>
                     <div class="form-group">
                         <label for="birthdate">Data urodzenia</label>
-                        <input type="date" id="birthdate" name="birthdate">
+                        <input type="date" id="date_of_birth" name="date_of_birth">
                     </div>
                     <div class="form-group">
                         <label for="ideas">Pomysły</label>

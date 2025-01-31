@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/../src/Router.php';
-require_once __DIR__ . '/../src/repositories/user_repository.php';
 require_once __DIR__ . '/../src/controllers/DefaultController.php';
 require_once __DIR__ . '/../src/controllers/AuthController.php';
+require_once __DIR__ . '/../src/controllers/NoteController.php';
 
 $publicDir = __DIR__;
 
@@ -26,18 +26,19 @@ if (file_exists($filePath) && is_file($filePath)) {
 $router = new Router();
 $default_controller = new DefaultController();
 $auth_controller = new AuthController();
+$note_controller = new NoteController();
 
 // Definiowanie tras
 $router->add('/', function() use($default_controller) {
     $default_controller->index();
 });
 
-$router->add('/dashboard', function() use($default_controller) {
-    $default_controller->dashboard();
+$router->add('/dashboard', function() use($note_controller) {
+    $note_controller->notes();
 });
 
-$router->add('/addperson', function() use($default_controller) {
-    $default_controller->addperson();
+$router->add('/addperson', function() use($note_controller) {
+    $note_controller->addNote();
 });
 
 $router->add('/login', function() use($default_controller) {
