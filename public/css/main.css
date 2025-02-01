@@ -31,6 +31,7 @@ body {
     flex-direction: column;
     justify-content: space-between; /* Przestrzeń między zakładkami a „wyloguj się” */
     align-items: center;
+    min-width: 100px;
 }
 
 .sidebar .logo {
@@ -41,6 +42,7 @@ body {
 .sidebar .logo img {
     width: 98%;
     max-width: 250px;
+    min-width: none;
     height: auto;
     margin-bottom: 10px;
 }
