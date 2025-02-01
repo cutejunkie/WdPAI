@@ -21,11 +21,11 @@
         <!-- Główna zawartość -->
         <main class="main-content">
             <header>
-                <h2>PANEL ADMINA - LISTA CZŁONKÓW</h2>
+                <h2>PANEL ADMINA - LISTA UŻYTKOWNIKÓW</h2>
             </header>
             <?php
             $count_users = count($users);
-            echo '<p>Ilość użytkowników w serwisie: ' . $count_users . '</p><br>';
+            echo '<p>Liczba użytkowników w serwisie: ' . $count_users . '</p><br>';
             
             if (isset($users) && !empty($users)) {
 
