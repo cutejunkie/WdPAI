@@ -9,7 +9,8 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
-    background-color: #f2f2f2 IMP !important;
+    background-color: #f2f2f2 IMP !important; /* bo był problem przy scrollowaniu że 
+                                                kolor zmienia się w połowie na szary*/
 }
 
 /* Główny kontener */
@@ -170,4 +171,75 @@ body {
 /* PRZY PRZEWIJANIU */
 body.scrolling {
     background-color: #f2f2f2; /* Zmiana koloru podczas scrollowania */
+}
+
+
+/* ====== RESPONSYWNOŚĆ ====== */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 16%;
+        min-width: 120px;
+    }
+    
+    .main-content {
+        margin-left: 16%;
+        padding: 15px;
+    }
+    
+    .notes {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 90px;
+        min-width: 90px;
+        padding: 10px;
+    }
+
+    .sidebar h1 {
+        display: none; /* Ukrycie tytułu */
+    }
+
+    .main-content {
+        margin-left: 90px;
+        padding: 10px;
+    }
+
+    .notes {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .note {
+        height: 140px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .sidebar .logo img {
+        max-width: 60px;
+    }
+
+    .main-content {
+        margin-left: 70px;
+        padding: 5px;
+    }
+
+    .notes {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 8px;
+    }
+
+    .note {
+        height: 130px;
+        font-size: 0.85rem;
+    }
 }

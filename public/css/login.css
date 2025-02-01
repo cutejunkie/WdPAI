@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    height: 90vh; /* Ustawienie wysokości na 100vh */
+    height: 100vh; /* Ustawienie wysokości na 100vh */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,25 +15,25 @@ body {
     overflow: hidden; /* Zapobiega przewijaniu strony */
 }
 
-/* Tło */
+/* tło do logo */
 .background {
     position: relative;
-    width: 100vw; /* Rozciąga tło na całą szerokość widoku */
-    height: 100vh; /* Tło rozciąga się na całą wysokość ekranu */
-    background-color: #f7d8e3; /*tło top baru*/
+    width: 100vw; 
+    height: 100vh;
+    background-color: #f7d8e3; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0; /* Przesunięcie tła do samej góry */
+    margin-top: 0; 
 }
 
-/* Logo - wycentrowane w poziomie i pionie */
+/* logo */
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Wyśrodkowanie w pionie */
+    height: 100%; 
 }
 
 .logo img {
@@ -41,7 +41,7 @@ body {
     height: auto;
 }
 
-/* Formularz */
+/* formularz */
 .form-container {
     margin-top: 20px;
     width: 100%;
@@ -83,8 +83,17 @@ body {
     font-weight: 400;
 }
 
+/* Tytuł "ZALOGUJ SIĘ" poniżej prostokąta */
+.title {
+    font-size: 56px;
+    color: #5a2e39;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+/* przyciski */
 .button {
-    width: 437px;
+    width: 50%;
     height: 59px;
     background-color: #ebd4aa;
     border-radius: 7px;
@@ -106,14 +115,6 @@ body {
     background-color: #c6ab7a; /* Ciemniejszy kolor przycisku po kliknięciu */
 }
 
-/* Tytuł "ZALOGUJ SIĘ" poniżej prostokąta */
-.title {
-    font-size: 56px;
-    color: #5a2e39;
-    font-weight: 400;
-    margin-top: 30px;
-}
-
 .register-text {
     margin-top: 20px;
     font-size: 20px;
@@ -122,11 +123,10 @@ body {
     text-align: center;
 }
 
-/* Przycisk rejestracji */
 .register-button {
     text-decoration: none; /* Usuwa podkreślenie tekstu */
     color: inherit; /* Zachowuje kolor tekstu zdefiniowany w button-text */
-    width: 437px;
+    width: 50%;
     height: 59px;
     background-color: #ebd4aa;
     border-radius: 7px;
@@ -141,4 +141,126 @@ body {
 
 .register-button:active {
     background-color: #c6ab7a; /* Ciemniejszy kolor przycisku po kliknięciu */
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+/* Dla ekranów o szerokości do 1024px */
+@media (max-width: 1024px) {
+    .logo img {
+        width: 180px;
+    }
+    
+    .form-container {
+        max-width: 550px;
+        gap: 18px;
+    }
+    
+    .input-field {
+        height: 55px;
+    }
+    
+    .input-field input,
+    .input-field label {
+        font-size: 18px;
+    }
+    
+    .title {
+        font-size: 48px;
+        margin-top: 25px;
+    }
+    
+    .button,
+    .register-button {
+        width: 60%;
+        height: 55px;
+    }
+    
+    .button-text {
+        font-size: 18px;
+    }
+    
+    .register-text {
+        font-size: 18px;
+    }
+}
+
+/* Dla ekranów o szerokości do 768px */
+@media (max-width: 768px) {
+    .logo img {
+        width: 150px;
+    }
+    
+    .form-container {
+        max-width: 450px;
+        gap: 16px;
+    }
+    
+    .input-field {
+        height: 50px;
+    }
+    
+    .input-field input,
+    .input-field label {
+        font-size: 16px;
+    }
+    
+    .title {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+    
+    .button,
+    .register-button {
+        width: 70%;
+        height: 50px;
+    }
+    
+    .button-text {
+        font-size: 16px;
+    }
+    
+    .register-text {
+        font-size: 16px;
+    }
+}
+
+/* Dla ekranów o szerokości do 480px */
+@media (max-width: 480px) {
+    .logo img {
+        width: 120px;
+    }
+    
+    .form-container {
+        max-width: 90%;
+        gap: 12px;
+    }
+    
+    .input-field {
+        height: 45px;
+    }
+    
+    .input-field input,
+    .input-field label {
+        font-size: 14px;
+    }
+    
+    .title {
+        font-size: 32px;
+        margin-top: 15px;
+    }
+    
+    .button,
+    .register-button {
+        width: 80%;
+        height: 45px;
+    }
+    
+    .button-text {
+        font-size: 14px;
+    }
+    
+    .register-text {
+        font-size: 14px;
+    }
 }

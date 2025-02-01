@@ -9,22 +9,22 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
-    background-color: #f2f2f2 IMP !important;
+    background-color: #f2f2f2 IMP !important; /* bo był problem przy scrollowaniu że kolor zmienia się w połowie na szary */
     overflow: hidden;
 }
 
-/* Główny kontener */
+/* cała strona */
 .container {
     display: flex;
     width: 100%;
 }
 
-/* Panel boczny */
+/* sidebar */
 .sidebar {
-    position: fixed; /* Ustawienie stałej pozycji */
-    top: 0; /* Przyklej na samej górze */
-    left: 0; /* Przyklej po lewej stronie */
-    height: 100%; /* Spraw, by pasek boczny zajmował całą wysokość ekranu */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%;
     background-color: #f7d8e3;
     width: 20%;
     padding: 20px;
@@ -32,6 +32,7 @@ body {
     flex-direction: column;
     justify-content: space-between; /* Przestrzeń między zakładkami a „wyloguj się” */
     align-items: center;
+    min-width: 105px;
 }
 
 .sidebar .logo {
@@ -42,6 +43,7 @@ body {
 .sidebar .logo img {
     width: 98%;
     max-width: 250px;
+    min-width: none;
     height: auto;
     margin-bottom: 10px;
 }
@@ -89,7 +91,7 @@ body {
     color: #b75d73;
 }
 
-/* Główna zawartość */
+/* Główna zawartość strony */
 .main-content {
     margin-left: 20%; /* Dostosuj do szerokości paska bocznego */
     flex: 1;
@@ -101,22 +103,22 @@ body {
     margin-bottom: 20px;
     color: #5a2e39;
 }
+
 /* ///////////////////////////////////// */
+/* Profil – domyślne ustawienia (duże) */
 .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Pełna wysokość widoku */
+    height: 100vh; 
     text-align: center;
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #b75d73;
+    width: 30vw; 
+    height: auto; 
+    min-width: none;
     margin-bottom: 15px;
 }
 
@@ -124,4 +126,92 @@ body {
     font-size: 1.5rem;
     margin-top: 15px;
     color: #5a2e39;
+    max-width: 50%;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 16%;
+        min-width: 120px;
+    }
+    
+    .main-content {
+        margin-left: 16%; /* Dostosowanie szerokości głównej zawartości */
+        padding: 15px;
+    }
+
+    /* Zmiana wielkości nagłówka w main-content */
+    .main-content header {
+        font-size: 1.2rem;
+    }
+
+    /* Dostosowanie rozmiarów obrazu profilu */
+    .profile-image {
+        width: 50vw;
+        max-width: 150px;
+    }
+
+    .profile-text {
+        font-size: 1.2rem;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 90px;
+        min-width: 90px;
+        padding: 10px;
+    }
+
+    .sidebar h1 {
+        display: none; /* Ukrycie tytułu */
+    }
+
+    .main-content {
+        margin-left: 90px; /* Dostosowanie marginesu w main-content */
+        padding: 10px;
+    }
+
+    .profile-image {
+        width: 60vw;
+        max-width: 120px;
+    }
+
+    .profile-text {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .sidebar .logo img {
+        max-width: 60px;
+    }
+
+    .main-content {
+        margin-left: 70px; /* Ustawienie marginesu dla małych ekranów */
+        padding: 5px;
+    }
+
+    .profile-image {
+        width: 70vw;
+        max-width: 100px;
+    }
+
+    .profile-text {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* Zmiana układu w profile */
+    .profile {
+        flex-direction: column;
+        padding: 10px;
+    }
 }
