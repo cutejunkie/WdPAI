@@ -45,4 +45,13 @@ class UserRepository extends Repository {
         ]);
     }
 
+    public function getUserCreationDate(string $email): ?string {
+        $query = "SELECT creation_date FROM users WHERE email = $1";
+        $result = pg_query_params($this->db_connection, $query, [$email]);
+
+        if ($row = pg_fetch_assoc($result)) {
+            return $row['creation_date'];
+        }
+    }
+
 }

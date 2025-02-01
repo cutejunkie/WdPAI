@@ -10,6 +10,7 @@ body {
     display: flex;
     height: 100vh;
     background-color: #f2f2f2 IMP !important;
+    overflow: hidden;
 }
 
 /* Główny kontener */
@@ -98,5 +99,29 @@ body {
 
 .main-content header {
     margin-bottom: 20px;
+    color: #5a2e39;
+}
+/* ///////////////////////////////////// */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Pełna wysokość widoku */
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #b75d73;
+    margin-bottom: 15px;
+}
+
+.profile-text {
+    font-size: 1.5rem;
+    margin-top: 15px;
     color: #5a2e39;
 }

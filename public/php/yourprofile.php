@@ -30,6 +30,20 @@
         <main class="main-content">
             <header>
                 <h2>Twój Profil</h2>
+                <?php
+                if (!isset($_SESSION['user'])) {
+                    header("Location: /login");
+                    exit();
+                }
+
+                $user_name = $_SESSION['user']['user_name'];
+                $creationDate = $_SESSION['user']['creation_date'];
+                ?>
+
+                <div class="profile">
+                    <img src="/images/profilepic.png" alt="Profilowe" class="profile-img">
+                    <p class="profile-text">JESTEŚ Z NAMI JUŻ OD <?php echo $creationDate;?>!</p>
+                </div>
             </header>
 
 </body>
