@@ -18,7 +18,7 @@ class UserRepository extends Repository {
     }
 
 
-/* najpier to potem notes*/
+/* najpierw to potem notes*/
 
     public function getUser(string $email): ?User {
         $query = "SELECT id, user_role, user_name, email, passw, creation_date FROM users WHERE email = $1";
@@ -52,6 +52,21 @@ class UserRepository extends Repository {
         if ($row = pg_fetch_assoc($result)) {
             return $row['creation_date'];
         }
+    }
+
+    public function getAllUsers(): array {
+        $query = "SELECT id, user_role, user_name, email, passw, creation_date FROM users";
+        $result = pg_query($this->db_connection, $query);
+    
+        $users = [];
+        while ($row = pg_fetch_assoc($result)) {
+            $user = new User($row['email'], $row['passw'], $row['user_name']);
+            $user->set_id($row['id']);
+            $user->set_role($row['user_role']);
+            $user->set_creation_date($row['creation_date']);
+            $users[] = $user;
+        }
+        return $users;
     }
 
 }

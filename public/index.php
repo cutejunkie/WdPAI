@@ -3,6 +3,7 @@ require_once __DIR__ . '/../src/Router.php';
 require_once __DIR__ . '/../src/controllers/DefaultController.php';
 require_once __DIR__ . '/../src/controllers/AuthController.php';
 require_once __DIR__ . '/../src/controllers/NoteController.php';
+require_once __DIR__ . '/../src/controllers/AdminController.php';
 
 $publicDir = __DIR__;
 
@@ -27,6 +28,7 @@ $router = new Router();
 $default_controller = new DefaultController();
 $auth_controller = new AuthController();
 $note_controller = new NoteController();
+$admin_controller = new AdminController();
 
 // Definiowanie tras
 $router->add('/', function() use($default_controller) {
@@ -63,6 +65,11 @@ $router->add('/api/logout', function() use($auth_controller) {
 
 $router->add('/yourprofile', function() use($default_controller) {
     $default_controller->yourprofile();
+});
+
+// panel admina
+$router->add('/admin', function() use($admin_controller) {
+    $admin_controller->users();
 });
 
 // Obsługa żądania

@@ -61,7 +61,7 @@
                 <div class="note">
                     <button class="delete-button">X</button>
                     <h3>PERSON</h3>
-                    <p>NAME</p>
+                    <p>DATE</p>
                     <p>notesnotesnotesnotesnotes notesnotes</p>
                 </div>
             </section> -->

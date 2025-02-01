@@ -37,4 +37,13 @@ class DefaultController extends AppController {
         }
         $this->render("yourprofile");
     }
+
+    public function admin()
+    {
+        if(isset($_SESSION['user']) && $_SESSION['user']['user_role'] === 'admin') {
+            $this->render('admin');
+            exit();
+        }
+        $this->render("login");
+    }
 }
