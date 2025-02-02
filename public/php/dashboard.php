@@ -41,13 +41,19 @@
                     if($i%4==0){
                         echo '<section class="notes">';
                     }
-
-                    echo '<div class="note">
+                    echo '<div class="note" data-id="'. $notes[$i]->get_id() .'">
                         <button class="delete-button">X</button>
                         <h3>'. $notes[$i]->get_gifted_name() .'</h3>
                         <p>'. $notes[$i]->get_date_of_birth() .'</p>
                         <p>'. $notes[$i]->get_ideas() .'</p>
                     </div>';
+
+                    // echo '<div class="note">
+                    //     <button class="delete-button">X</button>
+                    //     <h3>'. $notes[$i]->get_gifted_name() .'</h3>
+                    //     <p>'. $notes[$i]->get_date_of_birth() .'</p>
+                    //     <p>'. $notes[$i]->get_ideas() .'</p>
+                    // </div>';
 
                     if($i%4==3){
                         echo '</section>';
@@ -64,7 +70,7 @@
 
 
     <!-- JAVASCRIPT DO USUWANIA NOTATEK -->
-    <script>
+    <!-- <script>
         // Nasłuchiwanie na kliknięcia w przyciski "X"
         document.addEventListener('click', function (event) {
             if (event.target.classList.contains('delete-button')) {
@@ -72,7 +78,48 @@
                 note.remove(); // Usuń notatkę
             }
         });
-    </script>    
+    </script>     -->
+    <script>
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('delete-button')) {
+                const note = event.target.closest('.note'); 
+                const noteId = note.getAttribute('data-id');
+
+                if (!noteId) {
+                    console.error("Brak ID notatki!");
+                    return;
+                }
+
+                fetch('/api/deleteNote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `note_id=${noteId}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Odpowiedź serwera:', data);
+
+                    if (data.success) {
+                        note.remove();
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 500);
+                    } else {
+                        alert(`Błąd: ${data.error}`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Błąd połączenia:', error);
+                    alert('Wystąpił problem z połączeniem!');
+                });
+            }
+        });
+    </script>
+
+
+
 
 </body>
 </html>

@@ -67,6 +67,10 @@ $router->add('/yourprofile', function() use($default_controller) {
     $default_controller->yourprofile();
 });
 
+$router->add('/api/deleteNote', function() use($note_controller) {
+    $note_controller->deleteNote();
+});
+
 // panel admina
 $router->add('/admin', function() use($admin_controller) {
     $admin_controller->users();
