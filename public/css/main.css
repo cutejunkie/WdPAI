@@ -21,10 +21,10 @@ body {
 
 /* Panel boczny */
 .sidebar {
-    position: fixed; /* Ustawienie stałej pozycji */
-    top: 0; /* Przyklej na samej górze */
-    left: 0; /* Przyklej po lewej stronie */
-    height: 100%; /* Spraw, by pasek boczny zajmował całą wysokość ekranu */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
     background-color: #f7d8e3;
     width: 20%;
     padding: 20px;
@@ -107,8 +107,8 @@ body {
 /* Stylizacja notatek */
 .notes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsywne prostokąty */
-    gap: 20px; /* Odstępy między notatkami */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; 
 }
 
 .note {
@@ -134,8 +134,8 @@ body {
 }
 
 .note h3:hover {
-    color: #7b3b48; /* Ciemniejszy kolor dla napisu "PERSON" */
-    cursor: pointer; /* Dodaje wskaźnik myszki w formie ręki */
+    color: #7b3b48;
+    cursor: pointer;
 }
 
 .note p {
@@ -165,12 +165,12 @@ body {
 }
 
 .delete-button:hover {
-    background-color: #7b3b48; /* Ciemniejszy czerwony przy najechaniu */
+    background-color: #7b3b48; 
 }
 
 /* PRZY PRZEWIJANIU */
 body.scrolling {
-    background-color: #f2f2f2; /* Zmiana koloru podczas scrollowania */
+    background-color: #f2f2f2;
 }
 
 

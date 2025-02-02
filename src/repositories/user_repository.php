@@ -17,9 +17,6 @@ class UserRepository extends Repository {
         pg_close($this->db_connection);
     }
 
-
-/* najpierw to potem notes*/
-
     public function getUser(string $email): ?User {
         $query = "SELECT id, user_role, user_name, email, passw, creation_date FROM users WHERE email = $1";
         //var_dump($email);

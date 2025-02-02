@@ -93,7 +93,7 @@ body {
 
 /* Styl głównej zawartości */
 .main-content {
-    margin-left: 20%; /* Dostosuj do szerokości paska bocznego */
+    margin-left: 20%; 
     flex: 1;
     background-color: #fff;
     padding: 20px;

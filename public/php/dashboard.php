@@ -48,13 +48,6 @@
                         <p>'. $notes[$i]->get_ideas() .'</p>
                     </div>';
 
-                    // echo '<div class="note">
-                    //     <button class="delete-button">X</button>
-                    //     <h3>'. $notes[$i]->get_gifted_name() .'</h3>
-                    //     <p>'. $notes[$i]->get_date_of_birth() .'</p>
-                    //     <p>'. $notes[$i]->get_ideas() .'</p>
-                    // </div>';
-
                     if($i%4==3){
                         echo '</section>';
                     }
@@ -68,17 +61,7 @@
         </main>
     </div>
 
-
-    <!-- JAVASCRIPT DO USUWANIA NOTATEK -->
-    <!-- <script>
-        // Nasłuchiwanie na kliknięcia w przyciski "X"
-        document.addEventListener('click', function (event) {
-            if (event.target.classList.contains('delete-button')) {
-                const note = event.target.closest('.note'); // Znajdź rodzica (notatkę)
-                note.remove(); // Usuń notatkę
-            }
-        });
-    </script>     -->
+    <!-- JS DO USUWANIA NOTATEK -->
     <script>
         document.addEventListener('click', function (event) {
             if (event.target.classList.contains('delete-button')) {

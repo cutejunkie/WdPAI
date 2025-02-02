@@ -17,9 +17,6 @@ class NotesRepository extends Repository {
         pg_close($this->db_connection);
     }
 
-
-/* najpier notes potem to*/
-
     public function addNote(Note $note, int $userId): void {
         $query = "INSERT INTO notes (id_user, gifted_name, date_of_birth, ideas) VALUES ($1, $2, $3, $4)";
         pg_query_params($this->db_connection, $query, [

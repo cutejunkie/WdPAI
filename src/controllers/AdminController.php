@@ -16,13 +16,11 @@ class AdminController extends AppController
 
     public function users()
     {
-        // Sprawdzenie, czy użytkownik jest zalogowany i ma odpowiednią rolę
         if (empty($_SESSION['user']) || $_SESSION['user']['user_role'] !== 'admin') {
-            $this->render('login');  // Zrób przekierowanie do strony logowania
+            $this->render('login');
             exit();
         }
 
-        // Pobranie wszystkich użytkowników
         $users = $this->users_repository->getAllUsers();
 
         // Przekazanie użytkowników do widoku

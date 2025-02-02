@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- sidebar -->
         <aside class="sidebar">
             <div class="logo">
                 <img src="/images/logo.png" alt="Logo PrezentOwO">
@@ -18,7 +19,7 @@
             </div>
         </aside>
 
-        <!-- Główna zawartość -->
+        <!-- główna zawartość -->
         <main class="main-content">
             <header>
                 <h2>PANEL ADMINA - LISTA UŻYTKOWNIKÓW</h2>

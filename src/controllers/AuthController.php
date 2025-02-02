@@ -28,9 +28,9 @@ class AuthController extends AppController {
         
         $user = $this->user_repository->getUser($email);
 
-        // if (!$user || !password_verify($password, $user->get_password())) {
-        //     return $this->render('login');
-        // }
+        if (!$user || !password_verify($password, $user->get_password())) {
+            return $this->render('login');
+        }
 
         if (!$user) {
             return $this->render('login');

@@ -113,7 +113,7 @@ body {
 }
 
 .button:active {
-    background-color: #c6ab7a; /* Ciemniejszy kolor przycisku po kliknięciu */
+    background-color: #c6ab7a;
 }
 
 .register-text {
@@ -126,7 +126,7 @@ body {
 
 .register-button {
     text-decoration: none; /* Usuwa podkreślenie tekstu */
-    color: inherit; /* Zachowuje kolor tekstu zdefiniowany w button-text */
+    color: inherit;
     width: 50%;
     height: 59px;
     background-color: #ebd4aa;
@@ -136,17 +136,15 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-top: 1px; /* Zmniejszony margines między napisem a przyciskiem */
+    margin-top: 1px;
     margin-bottom: 20px;
 }
 
 .register-button:active {
-    background-color: #c6ab7a; /* Ciemniejszy kolor przycisku po kliknięciu */
+    background-color: #c6ab7a;
 }
 
 /* ====== MEDIA QUERIES ====== */
-
-/* Dla ekranów o szerokości do 1024px */
 @media (max-width: 1024px) {
     .logo img {
         width: 180px;
@@ -186,7 +184,6 @@ body {
     }
 }
 
-/* Dla ekranów o szerokości do 768px */
 @media (max-width: 768px) {
     .logo img {
         width: 150px;
@@ -226,7 +223,6 @@ body {
     }
 }
 
-/* Dla ekranów o szerokości do 480px */
 @media (max-width: 480px) {
     .logo img {
         width: 120px;
